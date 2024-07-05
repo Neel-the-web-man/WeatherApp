@@ -1,0 +1,134 @@
+#section2{
+    background-image: url("/bg-img-2.jpg");
+    height: 830px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: cursive;
+    gap: 25px;
+    background-position: center center;
+}
+#section2 h1{
+    font-size: 30px;
+}
+#sec-2-loc{
+    margin-bottom: -10px;
+}
+.curr-loc-data{
+    border: 3px solid white;
+    height: 550px;
+    width: 50%;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 30px;
+}
+.h1-sec2{
+    margin: 0px auto;
+}
+.loc-input{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+.loc-input input{
+    width: 500px;
+    padding:7px  10px;
+    font-size: 17px;
+}
+.loc-input button{
+    width: 70px;
+    color: white;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    border: 1px solid  white;
+    background:linear-gradient(45deg,rgb(193, 0, 193),rgb(0, 115, 255));
+}
+.loc-input button:hover{
+    background:linear-gradient(45deg,rgb(179, 0, 179),rgb(0, 98, 217));
+
+}
+.errMsg{
+    color: red;
+    font-size: 16px;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: yellow;
+}
+.weatherCond-sec2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -5px;
+}
+#weather-img{
+    width: 100px;
+    height: 100px;
+    margin: 0px auto;
+}
+.errMsg button{
+    background-color: transparent;
+    padding: 0px 2px;
+    margin-left: 10px;
+    margin-right: 3px;
+    color: red;
+    border: 1px solid red;
+    font-size: 17px;
+    cursor: pointer;
+}
+.errMsg button:hover{
+    background-color: red;
+    color: yellow;
+}
+
+@media only screen and (max-width:1000px){
+    .curr-loc-data{
+        width: 75%;
+    }
+}
+@media only screen and (max-width:700px){
+    .curr-loc-data{
+        width: 80%;
+    }
+    .loc-input input{
+        width: 400px;
+    }
+}
+@media only screen and (max-width:550px){
+    .loc-input input{
+        width: 200px;
+    }
+    #section2 h1{
+        font-size: 24px;
+    }
+    .curr-loc-data{
+        height: 500px;
+    }
+    #section2{
+        height: 780px;
+    }
+}
+@media only screen and (max-width:450px){
+    #section2{
+        height: 670px;
+    }
+    #section2 h1{
+        font-size: 20px;
+    }
+    .curr-loc-data{
+        height: 450px;
+        padding: 15px;
+    }
+    #weather-img{
+        width: 80px;
+        height: 80px;
+    }
+}

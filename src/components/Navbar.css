@@ -1,0 +1,51 @@
+nav{
+    position: sticky;
+    top: 0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+.opac-nav{
+    position: absolute;
+    top:0;
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    opacity: 0.7;
+    z-index: 1;
+}
+.logo-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: cursive;
+    gap: 10px;
+    z-index: 2;
+}
+.logo-sec img{
+    height: 70px;
+}
+.signlinks{
+    color: white;
+    z-index: 2;
+    margin-right: 25px;
+}
+.signlinks ul {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    font-family: cursive;
+}
+.signlinks ul li{
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+}
+.signlinks ul li:hover{
+    text-decoration: underline;
+}

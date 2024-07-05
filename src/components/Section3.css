@@ -1,0 +1,114 @@
+#section3{
+    background-image: url("/bg-img-1.jpg");
+    height: 720px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: cursive;
+    flex-direction: column;
+    padding-bottom: 30px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#section3 >h1{
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+#section3 >h2{
+    margin-bottom: 5px;
+}
+.sec3-cont{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+.card h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width:1270px){
+    .card{
+        width: 250px;
+    }
+    .card h1{
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width:1055px){
+    .card{
+        width: 220px;
+    }
+    .card h1{
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width:950px){
+    #section3{
+        height: 900px;
+        padding-bottom: 10px;
+        padding: 10px 3px;
+    }
+    .card{
+        height: 250px;
+    }
+}
+@media only screen and (max-width:700px){
+    .sec3-cont{
+        gap: 7px;
+    }
+    .card{
+        width: 200px;
+        height: 230px;
+    }
+    .card h1{
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+}
+@media only screen and (max-width:615px){
+    #section3{
+        min-height: 1050px;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+    .card{
+        width: 220px;
+        height: 230px;
+    }
+    .card h1{
+        font-size: 17px;
+        margin-bottom: 3px;
+    }
+}
+@media only screen and (max-width:500px){
+    .card{
+        width: 200px;
+    }
+    .card h1{
+        font-size:16px;
+    } 
+    #section3{
+        padding: 2px;
+    }
+}
+@media only screen and (max-width:417px){
+    .card{
+        width: 180px;
+    }
+}

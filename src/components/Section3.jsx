@@ -7,7 +7,7 @@ const Section3 = (props) => {
     const [CurrTime, setCurrTime] = useState("");
     const [forecast, setforecast] = useState("");
     const getData = async () => {
-        if (Location != "Nashik" && Location!="--") {
+        if (Location != "Nashik" && Location != "--") {
             let data = await getForecastData(Location, 1);
             let forecast = data.forecast;
             let forecastDay = forecast.forecastday[0];
@@ -33,29 +33,40 @@ const Section3 = (props) => {
         }
     }
     const handleCard = (t) => {
-        let time;
-        if (t < 10) {
-            time = `0${t}:00`;
-        } else {
-            time = `${t}:00`;
-        }
-        let timeArr = `${Date} ${time}`;
-        let hrArr;
-        for (let i = 0; i < (forecast.length); i++) {
-            if (forecast[i].time == timeArr) {
-                hrArr = forecast[i];
-                break;
+        if (Location != "--") {
+            let time;
+            if (t < 10) {
+                time = `0${t}:00`;
+            } else {
+                time = `${t}:00`;
             }
-        }
-        if (hrArr != undefined) {
+            let timeArr = `${Date} ${time}`;
+            let hrArr;
+            for (let i = 0; i < (forecast.length); i++) {
+                if (forecast[i].time == timeArr) {
+                    hrArr = forecast[i];
+                    break;
+                }
+            }
+            if (hrArr != undefined) {
 
-            let cond = hrArr.condition;
+                let cond = hrArr.condition;
+                return (<>
+                    <h1>Weather from {t}:00 to {t * 1 + 3}:00</h1>
+                    <div className="weather-data">Weather Condition: {cond.text}</div>
+                    <div className="weather-data">Temperature: {hrArr.temp_c}°C</div>
+                    <div className="weather-data">Humidity: {hrArr.humidity}%</div>
+                    <div className="weather-data">Winds: {hrArr.wind_kph} kph</div>
+                </>
+                )
+            }
+        }else{
             return (<>
                 <h1>Weather from {t}:00 to {t * 1 + 3}:00</h1>
-                <div className="weather-data">Weather Condition: {cond.text}</div>
-                <div className="weather-data">Temperature: {hrArr.temp_c}°C</div>
-                <div className="weather-data">Humidity: {hrArr.humidity}%</div>
-                <div className="weather-data">Winds: {hrArr.wind_kph} kph</div>
+                <div className="weather-data">Weather Condition: --</div>
+                <div className="weather-data">Temperature: --°C</div>
+                <div className="weather-data">Humidity: --%</div>
+                <div className="weather-data">Winds: -- kph</div>
             </>
             )
         }

@@ -9,6 +9,12 @@ const Navbar = () => {
                     <img src="/logo.jpeg" alt="logo" />
                     <h1>Weather App</h1>
                 </div>
+                <div className="signlinks">
+                    <ul>
+                        <li>Log In</li>
+                        <li>Sign In</li>
+                    </ul>
+                </div>
             </div>
         </nav>
     )

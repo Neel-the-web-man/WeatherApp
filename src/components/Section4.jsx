@@ -30,7 +30,7 @@ const Section4 = (props) => {
   }
   const getData = async () => {
     let data;
-    if (Location != "" && Location != "--") {
+    if (Location != "" && Location != "--"){
       if (Location == "Nashik") {
         data = await getForecastData("Nasik", 7);
       } else {
@@ -39,6 +39,8 @@ const Section4 = (props) => {
       data = data.forecast;
       let forecastArr = data.forecastday;
       setForecast(forecastArr);
+    }else{
+      setForecast("");
     }
   }
   const handleCard = (index) => {
@@ -55,9 +57,20 @@ const Section4 = (props) => {
       </>
       )
     }
+    if(Location=="--"){
+      return (<>
+      <div className='d-card-day'>{setDays(getDays() + index)}</div>
+      <div className="d-wCondition">Weather Condtion: --</div>
+      <div className="d-wCondition">Max-Temperature: --°C</div>
+      <div className="d-wCondition">Min-Temperature: --°C</div>
+      <div className="d-wCondition">Avg-Humidity: --%</div>
+      <div className="d-wCondition">Max-Winds: --kph</div>
+    </>
+    )
+    }
   }
   useEffect(() => {
-    if (props.passLocData != "--" && props.passLocData != undefined) {
+    if (props.passLocData != undefined) {
       setLocation(props.passLocData);
     }
   }, [props.passLocData])
@@ -70,7 +83,7 @@ const Section4 = (props) => {
   return (
     <>
       <section id='section4'>
-        <h1>Days Section</h1>
+        <h1>Daily Forecast for {Location}</h1>
         <div className="day-cards">
           <div className="day-card">
             {handleCard(1)}

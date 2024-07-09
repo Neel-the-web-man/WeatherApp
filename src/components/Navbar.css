@@ -37,7 +37,7 @@ nav{
 }
 .signlinks ul {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     font-size: 20px;
     font-family: cursive;
 }

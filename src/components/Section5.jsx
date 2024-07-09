@@ -9,6 +9,7 @@ const Section5 = (props) => {
     return (date.getMonth() + 1);
   }
   const getData = async () => {
+    if(Loc!="--"){
     let data;
     let date = new Date();
     let month = date.getMonth() * 1 + 1;
@@ -46,6 +47,10 @@ const Section5 = (props) => {
     }
     setForecast(forecastArr);
   }
+  else{
+    setForecast("");
+  }
+}
   const setMonth = (n) => {
     if (n > 12) {
       n = n - 12;
@@ -74,13 +79,24 @@ const Section5 = (props) => {
           <div className="m-wCondition">Avg-Humidity: {data.avghumidity}%</div>
         </>
       )
+    }else if(Loc=='--' || Forecast==""){
+      return (
+        <>
+          <div className="season">{setMonth(getMonth()+index*3)}</div>
+          <div className="m-wCondition">Chances of rainfall: --</div>
+          <div className="m-wCondition">UV-index: --</div>
+          <div className="m-wCondition">Max-Temperature: --°C</div>
+          <div className="m-wCondition">Min-Temperature: --°C</div>
+          <div className="m-wCondition">Avg-Humidity: --%</div>
+        </>
+      )
     }
   }
   useEffect(() => {
     getMonth();
   }, []);
   useEffect(() => {
-    if (props.passLocData != "" && props.passLocData != "--") {
+    if (props.passLocData != "") {
       setLoc(props.passLocData);
     }
   }, [props.passLocData]);
@@ -89,7 +105,7 @@ const Section5 = (props) => {
   }, [Loc]);
   return (
     <section id="section5">
-      <h1>Monthly Section</h1>
+      <h1>Monthly Forecast {Loc}</h1>
       <div className="cards-sec5">
         <div className="mn-card">
           {handleCard(0)}

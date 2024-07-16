@@ -68,7 +68,6 @@ const Section5 = (props) => {
   const handleCard = (index) => {
     if (Forecast!="" && Forecast[index]!=undefined) {
       let data=Forecast[index].day;
-      console.log(index);
       let cond=data.condition;
       return (
         <>

@@ -44,7 +44,7 @@ const Section4 = (props) => {
     }
   }
   const handleCard = (index) => {
-    if (Forecast != "" && Forecast != undefined){
+    if (Forecast != "" && Forecast[index]!=undefined && Forecast != undefined){
       let forecastDay = Forecast[index].day;
       let cond = forecastDay.condition;
       return (<>
@@ -57,7 +57,7 @@ const Section4 = (props) => {
       </>
       )
     }
-    if(Location=="--"){
+    else if(Location=="--"){
       return (<>
       <div className='d-card-day'>{setDays(getDays() + index)}</div>
       <div className="d-wCondition">Weather Condtion: --</div>

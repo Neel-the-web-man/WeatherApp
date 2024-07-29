@@ -66,7 +66,7 @@ const Section5 = (props) => {
     }
   }
   const handleCard = (index) => {
-    if (Forecast!="" && Forecast[index]!=undefined) {
+    if (Forecast!="" && Forecast[index]!=undefined && Forecast!=undefined) {
       let data=Forecast[index].day;
       let cond=data.condition;
       return (
@@ -79,7 +79,7 @@ const Section5 = (props) => {
           <div className="m-wCondition">Avg-Humidity: {data.avghumidity}%</div>
         </>
       )
-    }else if(Loc=='--' || Forecast==""){
+    }else if(Loc=='--' || Forecast=="" ){
       return (
         <>
           <div className="season">{setMonth(getMonth()+index*3)}</div>
